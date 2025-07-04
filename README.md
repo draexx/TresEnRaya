@@ -1,3 +1,4 @@
+
 # TresEnRaya (Tic-Tac-Toe)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/5a4ef735f2ff46e6a4c6b4227d0c4816)](https://app.codacy.com/gh/draexx/TresEnRaya/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
@@ -15,23 +16,27 @@ Para jugar, sigue estos pasos:
 2. **Descarga o clona este repositorio.**
 3. **Abre una terminal** y navega hasta el directorio donde se encuentra el archivo `main.py`.
 4. **Ejecuta el juego** con el siguiente comando:
+   
 ```bash
 python main.py
 ```
+
 5. El juego te mostrará el tablero y te pedirá que ingreses tu movimiento.
 6. Los movimientos se ingresan utilizando abreviaturas para las casillas del tablero:
 
-    * `SI`: Superior Izquierda
-    * `SC`: Superior Centro
-    * `SD`: Superior Derecha
-    * `CI`: Centro Izquierda
-    * `CC`: Centro Centro
-    * `CD`: Centro Derecha
-    * `II`: Inferior Izquierda
-    * `IC`: Inferior Centro
-    * `ID`: Inferior Derecha
+```
+* `SI`: Superior Izquierda
+* `SC`: Superior Centro
+* `SD`: Superior Derecha
+* `CI`: Centro Izquierda
+* `CC`: Centro Centro
+* `CD`: Centro Derecha
+* `II`: Inferior Izquierda
+* `IC`: Inferior Centro
+* `ID`: Inferior Derecha
 
-    Por ejemplo, si quieres marcar la casilla del centro, escribirías `CC` y presionarías Enter.
+Por ejemplo, si quieres marcar la casilla del centro, escribirías `CC` y presionarías Enter.
+```
 
 7. Los jugadores X y O se turnarán hasta que uno gane o el juego termine en empate.
 
