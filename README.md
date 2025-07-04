@@ -1,3 +1,4 @@
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/5a4ef735f2ff46e6a4c6b4227d0c4816)](https://app.codacy.com/gh/draexx/TresEnRaya/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 # TresEnRaya (Tic-Tac-Toe)
 
 Este es un sencillo juego de Tres en Raya (también conocido como Tic-Tac-Toe, Ta-Te-Ti, o Ceros y Cruces) implementado en Python. El juego se ejecuta en la consola y permite a dos jugadores competir entre sí.
@@ -14,9 +15,11 @@ Para jugar, sigue estos pasos:
 2. **Descarga o clona este repositorio.**
 3. **Abre una terminal o consola** y navega hasta el directorio donde se encuentra el archivo `main.py`.
 4. **Ejecuta el juego** con el siguiente comando:
-    ```bash
-    python main.py
-    ```
+   
+```bash
+python main.py
+```
+
 5. El juego te mostrará el tablero y te pedirá que ingreses tu movimiento.
 6. Los movimientos se ingresan utilizando abreviaturas para las casillas del tablero:
 
