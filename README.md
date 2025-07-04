@@ -1,5 +1,7 @@
 # TresEnRaya (Tic-Tac-Toe)
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6ffe2ff0399d4623bf26b75dd9944908)](https://app.codacy.com/gh/draexx/TresEnRaya?utm_source=github.com&utm_medium=referral&utm_content=draexx/TresEnRaya&utm_campaign=Badge_Grade)
+
 Este es un sencillo juego de Tres en Raya (también conocido como Tic-Tac-Toe, Ta-Te-Ti, o Ceros y Cruces) implementado en Python. El juego se ejecuta en la consola y permite a dos jugadores competir entre sí.
 
 ## Descripción del Juego
