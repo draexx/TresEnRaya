@@ -25,7 +25,7 @@ python main.py
 5. El juego te mostrará el tablero y te pedirá que ingreses tu movimiento.
 6. Los movimientos se ingresan utilizando abreviaturas para las casillas del tablero:
 
-```
+```text
 * `SI`: Superior Izquierda
 * `SC`: Superior Centro
 * `SD`: Superior Derecha
