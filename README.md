@@ -17,7 +17,7 @@ Para jugar, sigue estos pasos:
 2. **Descarga o clona este repositorio.**
 3. **Abre una terminal** y navega hasta el directorio donde se encuentra el archivo `main.py`.
 4. **Ejecuta el juego** con el siguiente comando:
-   
+
 ```bash
 python main.py
 ```
