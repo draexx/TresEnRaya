@@ -51,17 +51,18 @@ class Tablero:
 
 
 class Ficha:
-    def __init__(self, tipo):
+    def __init__(self, tipo, nombre=""):
         self.tipo = tipo
+        self.nombre = nombre if nombre else f"Jugador {tipo}"
 
     def __str__(self):
-        return f"Jugador {self.tipo}"
+        return self.nombre
 
 
 class Juego:
-    def __init__(self):
-        self.jugador1 = Ficha("X")
-        self.jugador2 = Ficha("O")
+    def __init__(self, nombre_jugador1="", nombre_jugador2=""):
+        self.jugador1 = Ficha("X", nombre_jugador1)
+        self.jugador2 = Ficha("O", nombre_jugador2)
         self.tablero = Tablero()
 
     def imprimir_jugada_valida(self):
@@ -92,8 +93,25 @@ class Juego:
         # No es necesario devolver el tablero aquí si la modificación es in-place y exitosa.
 
 
-def jugar():
-    juego = Juego()
+def solicitar_nombres_jugadores():
+    nombre_j1 = input("Ingrese el nombre para el Jugador X (o presione Enter para 'Jugador X'): ")
+    nombre_j2 = input("Ingrese el nombre para el Jugador O (o presione Enter para 'Jugador O'): ")
+    return nombre_j1, nombre_j2
+
+def solicitar_numero_partidas():
+    while True:
+        try:
+            num_partidas = int(input("¿Cuántas partidas desean jugar?: "))
+            if num_partidas > 0:
+                return num_partidas
+            else:
+                print("Por favor, ingrese un número mayor que cero.")
+        except ValueError:
+            print("Entrada inválida. Por favor, ingrese un número entero.")
+
+def jugar_una_partida(juego):
+    #juego = Juego() # Se pasa el juego como argumento
+    juego.tablero = Tablero() # Reiniciar tablero para cada partida
     juego.imprimir_jugada_valida()
     jugador_actual = juego.jugador1
     movimientos_realizados = 0
@@ -110,19 +128,56 @@ def jugar():
 
         if juego.ganador_juego(jugador_actual):
             juego.imprimiendo_tablero() # Mostrar el tablero final
-            print(f"¡Felicidades {jugador_actual}! Has ganado.")
-            return # Termina el juego
-
+            print(f"¡Felicidades {jugador_actual}! Has ganado la partida.")
+            return jugador_actual # Devuelve el ganador
         if movimientos_realizados == max_movimientos:
             juego.imprimiendo_tablero() # Mostrar el tablero final
-            print("El juego ha terminado en empate.")
-            return # Termina el juego
+            print("La partida ha terminado en empate.")
+            return None # Indica empate
 
         jugador_actual = juego.cambiar_turno(jugador_actual)
 
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    jugar()
+    print("¡Bienvenido a Tres en Raya!")
+    nombre_j1, nombre_j2 = solicitar_nombres_jugadores()
+    num_partidas_total = solicitar_numero_partidas()
+
+    juego_actual = Juego(nombre_j1, nombre_j2)
+    puntuacion = {juego_actual.jugador1.nombre: 0, juego_actual.jugador2.nombre: 0, "empates": 0}
+
+    for i in range(num_partidas_total):
+        print(f"\n--- Partida {i + 1} de {num_partidas_total} ---")
+        ganador_partida = jugar_una_partida(juego_actual)
+        if ganador_partida:
+            puntuacion[ganador_partida.nombre] += 1
+        else:
+            puntuacion["empates"] += 1
+
+        print("\nPuntuación actual:")
+        for nombre, puntos in puntuacion.items():
+            if nombre != "empates":
+                print(f"{nombre}: {puntos} victorias")
+        print(f"Empates: {puntuacion['empates']}")
+
+    print("\n--- ¡Juego Terminado! ---")
+    print("Puntuación final:")
+    # Determinar el ganador general o si fue empate general
+    punt_j1 = puntuacion[juego_actual.jugador1.nombre]
+    punt_j2 = puntuacion[juego_actual.jugador2.nombre]
+
+    if punt_j1 > punt_j2:
+        print(f"¡{juego_actual.jugador1.nombre} es el ganador general con {punt_j1} victorias!")
+    elif punt_j2 > punt_j1:
+        print(f"¡{juego_actual.jugador2.nombre} es el ganador general con {punt_j2} victorias!")
+    else:
+        print(f"¡El juego ha terminado en un empate general con {punt_j1} victorias cada uno!")
+
+    for nombre, puntos in puntuacion.items():
+        if nombre != "empates":
+            print(f"{nombre}: {puntos} victorias")
+    print(f"Empates: {puntuacion['empates']}")
+
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
