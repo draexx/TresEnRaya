@@ -64,7 +64,8 @@ El juego está contenido en `main.py` y se estructura de la siguiente manera:
 * **`Tablero`**: Clase que gestiona el estado del tablero de 3x3, incluyendo la impresión del tablero, la validación de movimientos, el registro de movimientos y la comprobación de si hay un ganador en la partida actual.
 * **`Ficha`**: Clase que representa a un jugador (X o O) y almacena su símbolo y nombre personalizado.
 * **`Juego`**: Clase que orquesta la lógica general de una partida. Inicializa a los dos jugadores (con sus nombres) y un tablero. Gestiona el cambio de turnos y la comprobación del ganador de la partida.
-* **`solicitar_nombres_jugadores()`**: Función que pide al usuario los nombres para los jugadores X y O.
+* **`solicitar_nombres_jugadores()`**: Función que pide al usuario los nombres
+   para los jugadores X y O.
 * **`solicitar_numero_partidas()`**: Función que pide al usuario el número de partidas a jugar y valida la entrada.
 * **`jugar_una_partida(juego)`**: Función que maneja el bucle de una única partida, incluyendo la solicitud de movimientos, la actualización del tablero y la determinación del ganador o empate de esa partida. Reinicia el tablero para la partida.
 * **Bloque `if __name__ == '__main__':`**: Es el punto de entrada principal del programa. Se encarga de:
