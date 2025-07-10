@@ -1,4 +1,5 @@
 # This is a sample Python script.
+import os
 
 # Press Mays+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
@@ -15,6 +16,8 @@ class Tablero:
         self.tablero_interno = [[" " for _ in range(3)] for _ in range(3)]
 
     def imprimir_tablero(self):
+        # Clear the terminal screen
+        os.system('cls' if os.name == 'nt' else 'clear')
         for fila in self.tablero_interno:
             print("|".join(fila))
             print("-+" * 2 + "-")
@@ -118,7 +121,7 @@ def jugar_una_partida(juego):
     max_movimientos = 9
 
     while movimientos_realizados < max_movimientos:
-        juego.imprimiendo_tablero()
+        juego.imprimiendo_tablero() # This will now clear the screen and print the board
         print(f"Turno del {jugador_actual}")
         posicion = input("¿Cuál es tu movimiento? (ej. SI, CC, ID): ").upper()
 
@@ -127,11 +130,11 @@ def jugar_una_partida(juego):
         movimientos_realizados += 1
 
         if juego.ganador_juego(jugador_actual):
-            juego.imprimiendo_tablero() # Mostrar el tablero final
+            juego.imprimiendo_tablero() # Ensure the final board state is shown
             print(f"¡Felicidades {jugador_actual}! Has ganado la partida.")
             return jugador_actual # Devuelve el ganador
         if movimientos_realizados == max_movimientos:
-            juego.imprimiendo_tablero() # Mostrar el tablero final
+            juego.imprimiendo_tablero() # Ensure the final board state is shown
             print("La partida ha terminado en empate.")
             return None # Indica empate
 
