@@ -144,6 +144,7 @@ class TicTacToeGUI:
     def run(self):
         self.window.mainloop()
 
+
 if __name__ == "__main__":
     game_gui = TicTacToeGUI()
     game_gui.run()
